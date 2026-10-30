@@ -2785,7 +2785,7 @@ const ONLINE = !window.claude && location.protocol.startsWith("http");   // di N
 /* ===== MULTIPLAYER DI GITHUB PAGES: Firebase Realtime Database lewat REST (tanpa SDK) =====
    Cara mengisi URL dan aturan database ada di PANDUAN_MULTIPLAYER_GITHUB_PAGES.md.
    Kosong ("") = pakai /api di Netlify, atau mode lokal. Contoh: "https://nama-proyek-default-rtdb.firebaseio.com" */
-const RTDB_URL = "";
+const RTDB_URL = "https://arcana-4318e-default-rtdb.asia-southeast1.firebasedatabase.app/";
 const RTDB_ON = !!RTDB_URL && location.protocol.startsWith("http");
 const RTDB_JEDA = 8000;     // pemain dianggap online bila datanya berubah dalam 8 detik terakhir (jam tiap HP boleh beda)
 let hadirSibuk = false;
@@ -2794,7 +2794,7 @@ const rtdbBaca = async jalur => { const r = await fetch(`${RTDB_URL}/arcana/${ja
 const rtdbHapus = jalur => fetch(`${RTDB_URL}/arcana/${jalur}.json`, {method:"DELETE"}).catch(() => {});
 const lihatHadir = {};      // id → {t: nilai t terakhir, at: waktu lokal saat t itu terlihat berubah}
 // ===== ROOM (multiplayer) & SAVE CLOUD di GitHub Pages =====
-const ADMIN_KODE = "ganti-kode-admin";   // ganti dengan kode rahasiamu sendiri (lihat panduan)
+const ADMIN_KODE = "akugantengbanget";   // ganti dengan kode rahasiamu sendiri (lihat panduan)
 let MP_KODE = "";
 try { MP_KODE = localStorage.getItem("arcana_room") || ""; } catch (e) {}
 const mpJalur = () => "rooms/" + MP_KODE + "/hadir";
